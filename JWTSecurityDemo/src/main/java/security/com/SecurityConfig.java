@@ -62,8 +62,6 @@ public class SecurityConfig
         http.csrf(csrf -> csrf.disable());
         http.addFilterBefore(authenticationJwtTokenFilter(),
                 UsernamePasswordAuthenticationFilter.class);
-
-
         return http.build();
     }
 
@@ -92,7 +90,7 @@ public class SecurityConfig
             JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
             userDetailsManager.createUser(user1);
             userDetailsManager.createUser(admin);
-        };
+        }
     }
 
     @Bean
